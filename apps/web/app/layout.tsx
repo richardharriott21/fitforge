@@ -1,7 +1,12 @@
-'use client';
-
+import type { Metadata } from 'next';
 import "./globals.css";
 import { AppGenProvider } from "@/components/appgen-provider";
+import ClientLayout from "./client-layout";
+
+export const metadata: Metadata = {
+  title: 'FitForge - Build Your Best Self',
+  description: 'Your personal fitness companion',
+};
 
 export default function RootLayout({
   children,
@@ -12,7 +17,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
-        <title>FitForge - Build Your Best Self</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" />
@@ -20,7 +24,9 @@ export default function RootLayout({
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
       </head>
       <body className="antialiased">
-        <AppGenProvider>{children}</AppGenProvider>
+        <AppGenProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </AppGenProvider>
       </body>
     </html>
   );
