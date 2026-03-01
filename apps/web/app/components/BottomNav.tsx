@@ -30,13 +30,13 @@ export default function BottomNav() {
 
           {/* Right Tabs */}
           <div className="flex-1 flex justify-around pb-2">
+            <Link href="/history" className={`flex flex-col items-center gap-1 w-16 ${isActive('/history') ? 'text-brand-500' : 'text-slate-400 hover:text-slate-600 transition-colors'}`}>
+              <i className={`${isActive('/history') ? 'ph-fill' : 'ph'} ph-clock-counter-clockwise text-2xl`}></i>
+              <span className="text-[10px] font-medium">History</span>
+            </Link>
             <Link href="/progress" className={`flex flex-col items-center gap-1 w-16 ${isActive('/progress') ? 'text-brand-500' : 'text-slate-400 hover:text-slate-600 transition-colors'}`}>
               <i className={`${isActive('/progress') ? 'ph-fill' : 'ph'} ph-chart-bar text-2xl`}></i>
               <span className="text-[10px] font-medium">Progress</span>
-            </Link>
-            <Link href="/tips" className={`flex flex-col items-center gap-1 w-16 ${isActive('/tips') ? 'text-brand-500' : 'text-slate-400 hover:text-slate-600 transition-colors'}`}>
-              <i className={`${isActive('/tips') ? 'ph-fill' : 'ph'} ph-article text-2xl`}></i>
-              <span className="text-[10px] font-medium">Tips</span>
             </Link>
           </div>
         </div>
